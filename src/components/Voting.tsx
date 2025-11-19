@@ -1,6 +1,31 @@
 import { useVotingContract } from "../hooks/useVotingContract";
 import { useAccount } from "wagmi";
 
+/**
+ * Voting component that renders a decentralized voting application interface.
+ *
+ * This component provides a user interface for blockchain-based voting, displaying
+ * voting options with current vote counts and handling user interactions for casting votes.
+ * It integrates with Web3 wallet connections and smart contract interactions.
+ *
+ * @component
+ *
+ * @features
+ * - Displays voting options with real-time vote counts
+ * - Handles wallet connection status
+ * - Prevents duplicate voting from the same user
+ * - Shows loading states during contract interactions
+ * - Displays success/error feedback for voting transactions
+ * - Responsive design with gradient styling and animations
+ *
+ * @dependencies
+ * - `useVotingContract`: Custom hook for smart contract interactions
+ * - `useAccount`: Hook for wallet connection status from wagmi
+ *
+ * @returns {JSX.Element} A voting interface with options, vote counts, and status messages
+ *
+ * ```
+ */
 const Voting = () => {
   const {
     loadingOptions,
@@ -84,21 +109,3 @@ const Voting = () => {
 };
 
 export default Voting;
-
-// Add these to your tailwind.config.js for custom animations if not present:
-/*
-theme: {
-  extend: {
-    animation: {
-      'fade-in': 'fadeIn 0.8s ease-out',
-      'fade-in-down': 'fadeInDown 0.8s ease-out',
-      'fade-in-up': 'fadeInUp 0.8s ease-out',
-    },
-    keyframes: {
-      fadeIn: { '0%': { opacity: 0 }, '100%': { opacity: 1 } },
-      fadeInDown: { '0%': { opacity: 0, transform: 'translateY(-20px)' }, '100%': { opacity: 1, transform: 'translateY(0)' } },
-      fadeInUp: { '0%': { opacity: 0, transform: 'translateY(20px)' }, '100%': { opacity: 1, transform: 'translateY(0)' } },
-    },
-  },
-}
-*/
