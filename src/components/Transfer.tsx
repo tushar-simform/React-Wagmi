@@ -1,3 +1,14 @@
+/**
+ * Transfer Component
+ * Purpose: ETH transfer interface allowing users to send ETH to other addresses
+ * Features:
+ * - Form-based ETH transfer with recipient address and amount inputs
+ * - Real-time transaction status feedback (loading, success, error states)
+ * - Wallet connection requirement with fallback to connect button
+ * - Input validation and user-friendly error messages
+ * - Responsive design with accessible form controls
+ * Usage: Accessible at "/transfer-assets" route for connected wallets
+ */
 import { useState } from "react";
 import { useTransfer } from "../hooks/transfer";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
